@@ -242,8 +242,9 @@ input[type='radio']:hover {
 
 .height-value-container,
 .weight-value-container {
-  display: flex;
+  display: grid;
   gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .height-input,
