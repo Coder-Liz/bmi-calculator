@@ -1,0 +1,866 @@
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v18-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter-v18-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter-v18-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --grey500: hsl(215, 17%, 45%);
+  --grey300: hsl(215, 43%, 77%);
+  --blue900: hsl(215, 31%, 21%);
+  --blue500: hsl(227, 92%, 58%);
+  --blue300: hsl(209, 69%, 82%);
+  --blue100: hsl(228, 94%, 94%);
+  --gradient: linear-gradient(
+    90deg,
+    hsla(183, 98%, 91%, 0),
+    hsla(216, 95%, 92%, 1)
+  );
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+/* start hero section styles  */
+.hero {
+  width: 100%;
+  background: var(--white);
+  position: relative;
+  height: 1128px;
+}
+
+.hero::before {
+  content: '';
+  width: 100%;
+  height: 650px;
+  border-radius: 0 0 35px 35px;
+  background: var(--gradient);
+  display: block;
+}
+
+.hero-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px 24px 0 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.hero-text-form-container {
+  display: grid;
+  gap: 32px;
+}
+
+.hero-header {
+  display: grid;
+  gap: 1.125rem;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  font-size: clamp(3rem, 2.52rem + 2.04vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -5%;
+  color: var(--blue900);
+}
+
+.hero-description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--grey500);
+}
+
+form {
+  width: 100%;
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: 16px 32px 56px 0px hsla(211, 40%, 69%, 0.25);
+}
+
+.form-header-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -5%;
+  color: var(--blue900);
+}
+
+.unit-selector {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.metric-label,
+.imperial-label {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--blue900);
+}
+
+#metric,
+#imperial {
+  margin: 0;
+}
+
+/* Custom radio button container */
+input[type='radio'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #5e6e85;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Unchecked state */
+input[type='radio']:not(:checked) {
+  background-color: transparent;
+}
+
+/* Checked state */
+input[type='radio']:checked {
+  background-color: #e1e7fe;
+  border: 1px solid #e1e7fe;
+}
+
+/* Inner circle indicator */
+input[type='radio']:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background-color: #345ff6;
+  border-radius: 50%;
+}
+
+/* Focus state */
+input[type='radio']:focus-visible {
+  outline: 1px solid #345ff6;
+  outline-offset: 1px;
+}
+
+/* Hover interaction */
+input[type='radio']:hover {
+  border-color: #345ff6;
+}
+
+.input-fields {
+  display: grid;
+  gap: 16px;
+}
+
+.height-value-container,
+.weight-value-container {
+  display: flex;
+  gap: 16px;
+}
+
+.height-input,
+.weight-input {
+  display: grid;
+  gap: 8px;
+}
+
+.height-label,
+.weight-label {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--grey500);
+}
+
+.height-value,
+.weight-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--grey500);
+  cursor: pointer;
+}
+
+.weight-num,
+.height-num {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -5%;
+  color: var(--blue900);
+
+  width: 60%;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.height-num::-webkit-outer-spin-button,
+.height-num::-webkit-inner-spin-button,
+.weight-num::-webkit-outer-spin-button,
+.weight-num::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.height-num,
+.weight-num {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.height-num::placeholder,
+.weight-num::placeholder {
+  color: var(--blue900);
+}
+
+.height-unit,
+.weight-unit {
+  font: inherit;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  color: var(--blue500);
+}
+
+.bmi-result {
+  width: 100%;
+  padding: 32px;
+  background-color: var(--blue500);
+  color: var(--white);
+  border-radius: 16px;
+  display: grid;
+  gap: 24px;
+}
+
+.empty {
+  width: 100%;
+  padding: 32px;
+  background-color: var(--blue500);
+  color: var(--white);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.empty-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  color: var(--white);
+}
+
+.empty-description {
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.hidden {
+  display: none;
+}
+
+.bmi-value {
+  display: grid;
+  gap: 8px;
+}
+
+.bmi-label {
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.bmi-number {
+  font: inherit;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.bmi-description {
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.bmi-classification,
+.bmi-range {
+  font-weight: 700;
+}
+
+/* start results section styles  */
+
+.results {
+  margin-top: clamp(4rem, 3.28rem + 3.06vw, 5.5rem);
+}
+
+.results-container {
+  width: 100%;
+  display: grid;
+  gap: 48px;
+}
+
+.curved-line-left {
+  display: none;
+}
+
+.results-text-container {
+  display: grid;
+  gap: 32px;
+  padding-inline: 23.5px;
+}
+
+h2 {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-size: clamp(2rem, 1.52rem + 2.04vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  color: var(--blue900);
+}
+
+.results-description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--grey500);
+}
+
+/* start tips section styles  */
+.tips {
+  margin-top: 60px;
+  position: relative;
+}
+
+.tips::before {
+  content: '';
+  width: 100%;
+  height: 820px;
+  background: var(--gradient);
+  display: block;
+}
+
+.tips-content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 48px 24px;
+  display: grid;
+  gap: 40px;
+}
+
+.healthy-eating-card,
+.regular-exercise-card,
+.adequate-sleep-card {
+  display: grid;
+  gap: 32px;
+}
+
+.tips-image1,
+.tips-image2,
+.tips-image3 {
+  width: 64px;
+  height: 64px;
+}
+
+.healthy-eating-text-container,
+.regular-exercise-text-container,
+.adequate-sleep-text-container {
+  display: grid;
+  gap: 24px;
+}
+
+h3 {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  color: var(--blue900);
+}
+
+.healthy-eating-description,
+.regular-exercise-description,
+.adequate-sleep-description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--grey500);
+}
+/* end tips section styles  */
+
+/* start limitations section styles  */
+.limitations {
+  padding: 82px 24px;
+}
+
+.bmi-limitations {
+  display: grid;
+  gap: 56px;
+}
+
+.curved-line-right {
+  display: none;
+}
+
+.limitations-container {
+  display: grid;
+  gap: 32px;
+  text-align: center;
+}
+
+.limitations-description {
+  color: var(--grey500);
+}
+
+.limitations-content {
+  display: grid;
+  gap: 16px;
+}
+
+.gender,
+.age,
+.muscle,
+.pregnancy,
+.race {
+  padding: 24px;
+  border-radius: 16px;
+  background-color: var(--white);
+  box-shadow: 16px 32px 56px 0px hsla(211, 40%, 69%, 0.25);
+}
+
+.gender-text,
+.age-text,
+.muscle-text,
+.pregnancy-text,
+.race-text {
+  display: grid;
+  gap: 16px;
+}
+
+.gender-icon,
+.age-icon,
+.muscle-icon,
+.pregnancy-icon,
+.race-icon {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.05em;
+  color: var(--blue900);
+}
+
+.gender-description,
+.age-description,
+.muscle-description,
+.pregnancy-description,
+.race-description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--grey500);
+}
+/* end limitations section styles  */
+
+/* 768px media query - tablet */
+@media (width >= 48em) {
+  /* hero section */
+
+  .hero {
+    width: 100%;
+    height: 830px;
+  }
+
+  .hero::before {
+    height: 600px;
+  }
+
+  .hero-container {
+    padding: 32px 40px 0 40px;
+    gap: 40px;
+  }
+
+  .hero-text-form-container {
+    gap: 40px;
+  }
+
+  form {
+    padding: 32px;
+    gap: 32px;
+  }
+
+  .input-fields {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .imperial {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .empty {
+    border-radius: 16px 100px 100px 16px;
+  }
+
+  .bmi-result {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    border-radius: 16px 100px 100px 16px;
+  }
+
+  /* start results section styles  */
+
+  .results {
+    padding-right: 43px;
+  }
+
+  .results-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .results-image {
+    margin-left: -48px;
+  }
+
+  .results-text-container {
+    padding-inline: 0;
+  }
+
+  /* start tips section styles  */
+
+  .tips {
+    margin-top: 95px;
+  }
+
+  .tips::before {
+    height: 475px;
+  }
+
+  .tips-content-container {
+    padding: 50px 39px;
+  }
+
+  .healthy-eating-card,
+  .regular-exercise-card,
+  .adequate-sleep-card {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* start limitations section */
+
+  .limitations {
+    padding: 96px 43px 96px 39px;
+  }
+
+  .curved-line-right {
+    display: none;
+  }
+
+  .limitations-content {
+    row-gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'a a b b'
+      'c c d d'
+      '. e e .';
+  }
+
+  .card:nth-child(1) {
+    grid-area: a;
+  }
+
+  .card:nth-child(2) {
+    grid-area: b;
+  }
+
+  .card:nth-child(3) {
+    grid-area: c;
+  }
+
+  .card:nth-child(4) {
+    grid-area: d;
+  }
+
+  .card:nth-child(5) {
+    grid-area: e;
+  }
+}
+
+/* 1440px media query - desktop*/
+@media (width >= 90em) {
+  /* hero section */
+  .hero {
+    width: 100%;
+    height: 675px;
+  }
+
+  .hero::before {
+    width: 1000px;
+    height: 675px;
+  }
+
+  .hero-container {
+    padding: 88px 144px;
+    gap: 24px;
+  }
+
+  .hero-text-form-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .hero-header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    text-align: left;
+    padding-top: 72px;
+  }
+
+  .logo {
+    align-self: flex-start;
+  }
+
+  h1 {
+    width: 11ch;
+  }
+
+  .hero-description {
+    width: 48ch;
+  }
+
+  /* start results section styles  */
+  .results {
+    padding-right: 0;
+    padding-inline: 144px;
+    position: relative;
+  }
+
+  .results-container {
+    gap: 100px;
+  }
+
+  .curved-line-left {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 12%;
+  }
+
+  .image-container {
+    margin-top: 52px;
+  }
+
+  .results-image {
+    margin-left: 0;
+  }
+
+  .results-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 220px;
+  }
+
+  .results-description {
+    width: 47ch;
+  }
+
+  /* start tips section */
+
+  .tips::before {
+    width: 1392px;
+    height: 402px;
+    border-radius: 35px;
+  }
+
+  .tips-content-container {
+    padding: 90px 140px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .healthy-eating-card,
+  .regular-exercise-card,
+  .adequate-sleep-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* start limitations section */
+
+  .limitations {
+    padding: 115px 140px;
+  }
+
+  .bmi-limitations {
+    position: relative;
+  }
+
+  .curved-line-right {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 15%;
+    transform: translateY(200%);
+  }
+
+  .limitations-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+    width: 564px;
+  }
+
+  .limitations-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 961px;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 32px;
+    grid-template-areas:
+      '. . . . . a a a a .'
+      '. . b b b b c c c c'
+      'd d d d e e e e . .';
+  }
+
+  .card:nth-child(1) {
+    grid-area: a;
+  }
+
+  .card:nth-child(2) {
+    grid-area: b;
+  }
+
+  .card:nth-child(3) {
+    grid-area: c;
+  }
+
+  .card:nth-child(4) {
+    grid-area: d;
+  }
+
+  .card:nth-child(5) {
+    grid-area: e;
+  }
+}
