@@ -552,7 +552,7 @@ h3 {
   align-items: center;
 }
 
-h4 {
+.small {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
