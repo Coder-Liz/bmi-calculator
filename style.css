@@ -704,7 +704,7 @@ h4 {
   }
 }
 
-/* 1440px media query - desktop*/
+/* 1440px media query - desktop 90em*/
 @media (width >= 90em) {
   /* hero section */
   .hero {
