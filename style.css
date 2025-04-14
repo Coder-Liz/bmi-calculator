@@ -577,8 +577,9 @@ h3 {
   /* hero section */
 
   .hero {
-    width: 100%;
+    width: 768px;
     height: 967px;
+    margin: 0 auto;
   }
 
   .hero::before {
@@ -626,6 +627,7 @@ h3 {
   /* start results section styles  */
 
   .results {
+    width: 100%;
     padding-right: 43px;
   }
 
@@ -645,6 +647,8 @@ h3 {
   /* start tips section styles  */
 
   .tips {
+    width: 768px;
+    margin: 0 auto;
     margin-top: 95px;
   }
 
@@ -668,7 +672,9 @@ h3 {
   /* start limitations section */
 
   .limitations {
+    width: 768px;
     padding: 96px 43px 96px 39px;
+    margin: 0 auto;
   }
 
   .curved-line-right {
@@ -709,7 +715,7 @@ h3 {
 @media screen and (min-width: 1440px) {
   /* hero section */
   .hero {
-    width: 100%;
+    width: 1440px;
     height: 675px;
   }
 
@@ -750,6 +756,7 @@ h3 {
 
   /* start results section styles  */
   .results {
+    width: 1440px;
     padding-right: 0;
     padding-inline: 144px;
     position: relative;
@@ -787,6 +794,10 @@ h3 {
 
   /* start tips section */
 
+  .tips {
+    width: 1440px;
+  }
+
   .tips::before {
     width: 1392px;
     height: 402px;
@@ -809,6 +820,7 @@ h3 {
   /* start limitations section */
 
   .limitations {
+    width: 1440px;
     padding: 115px 140px;
   }
 
