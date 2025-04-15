@@ -718,7 +718,7 @@ h3 {
   /* hero section */
   .hero {
     width: 1440px;
-    height: 675px;
+    height: 798px;
   }
 
   .hero::before {
@@ -759,6 +759,7 @@ h3 {
   /* start results section styles  */
   .results {
     width: 1440px;
+    height: 671px;
     padding-right: 0;
     padding-inline: 144px;
     position: relative;
