@@ -81,7 +81,7 @@ img {
 body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   min-height: 100vh;
-  margin-block-end: 50vh;
+  margin-block-end: 20vh;
 }
 
 /* start hero section styles  */
@@ -823,6 +823,7 @@ h3 {
 
   .limitations {
     width: 1440px;
+    height: 934px;
     padding: 115px 140px;
   }
 
