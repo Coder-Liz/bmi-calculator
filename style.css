@@ -80,6 +80,7 @@ img {
 
 body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
+  margin-block-end: 50vh;
 }
 
 /* start hero section styles  */
