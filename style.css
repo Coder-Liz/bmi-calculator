@@ -136,7 +136,7 @@ h1 {
   font-size: clamp(3rem, 2.52rem + 2.04vw, 4rem);
   font-weight: 600;
   line-height: 1.1;
-  letter-spacing: -5%;
+  letter-spacing: -0.05em;
   color: var(--blue900);
 }
 
